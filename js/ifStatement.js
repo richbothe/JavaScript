@@ -13,16 +13,16 @@ if (myNumber === 42) {
 }
 
 // Inequality operators
-var foo = 1;
-var bar = 2;
-var moo = 3;
+var one = 1;
+var two = 2;
+var three = 3;
 
-if (foo < bar && moo > bar) {
-    console.log('foo is smaller than bar AND moo is larger than bar');
+if (one < two && three > two) {
+    console.log('One is smaller than two AND three is larger than two');
 }
 
-if (foo < bar || moo > bar) {
-    console.log('foo is smaller than bar OR moo is larger than bar')
+if (one < two || three > two) {
+    console.log('One is smaller than two OR three is larger than two')
 }
 
 // The 'not' operator
@@ -33,18 +33,17 @@ if (!notTrue) {
 
 // The 'switch' statement
 // Used to select between more than two different options, and to run the same code for more than one option.
-let rank = 'Commander';
+let rank = 'Boss';
 switch(rank) {
-    case "Private":
-    case "Sergant":
-        console.log('You are not authorized');
+    case "Newbie":
+    case "Lead":
+        console.log(rank + ', you are not authorized');
         break; // Needed to avoid the switch from executing the next code block.
-    case "Commander":
-        console.log('Hello commmander!');
+    case "Boss":
+    case "Supervisor":
+        console.log('Hello ' + rank + '!');
         break;
-    case "Captain":
-        console.log('Hello captain!');
-        break;
-    default: // default is used what to do if an unknown rank was evaluated.
+    default: // default is used when an unknown rank is evaluated.
         console.log("I don't know what your rank is");
+        break;
 }
