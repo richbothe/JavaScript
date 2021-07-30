@@ -1,0 +1,8 @@
+/* Reset BS tabs */
+.bs-tabs .tab-content>.tab-pane {
+    display: block;
+}
+
+.bs-tabs .fade:not(.show) {
+    opacity: 1;
+}

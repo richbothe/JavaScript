@@ -5,102 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning JavaScript</title>
-    <link rel="stylesheet" type="text/css" href="css/tabs.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bs-tabs.css"/>
 </head>
 <body>
-    <!-- <h1>Learning JavaScript</h1> -->
-    <p>Look in the console.</p>
+	<div class="container pt-5 pb-5">
+		<h1>Learning JavaScript</h1>
+		<p>Look in the console.</p>
 
-    <button type="button" tabindex="0">tabindex 0</button>
-    <button type="button" tabindex="-1">tabindex -1</button>
-    <hr>
-    
-    <div class="tabs">
-        <div role="tablist" aria-label="Entertainment">
-          <button role="tab"
-                  aria-selected="true"
-                  aria-controls="nils-tab"
-                  id="nils">
-            Nils Frahm
-          </button>
-          <button role="tab"
-                  aria-selected="false"
-                  aria-controls="agnes-tab"
-                  id="agnes"
-                  tabindex="-1">
-            Agnes Obel
-          </button>
-          <button role="tab"
-                  aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
-            Joke
-          </button>
-        </div>
-        <div tabindex="0"
-             role="tabpanel"
-             id="nils-tab"
-             aria-labelledby="nils">
-          <p>
-            Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.
-          </p>
-        </div>
-        <div tabindex="0"
-             role="tabpanel"
-             id="agnes-tab"
-             aria-labelledby="agnes"
-             hidden="">
-          <p>
-            Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.
-          </p>
-        </div>
-        <div tabindex="0"
-             role="tabpanel"
-             id="complexcomplex"
-             aria-labelledby="complex"
-             hidden="">
-          <p>
-            Fear of complicated buildings:
-          </p>
-          <p>
-            A complex complex complex.
-          </p>
-        </div>
-    </div>
+		<button type="button" class="btn btn-outline-success" tabindex="0">tabindex 0</button>
+		<button type="button" class="btn btn-outline-danger" tabindex="-1">tabindex -1</button>
+		<a class="btn btn-dark" href="_tabs.html">Tabs</a>
+		<hr>
 
-    <div id="tabs" class="tabs">
-        <ul role="tablist">
-            <li class="nav-item active">
-                <a id="tabOne" class="nav-link active" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true"
-                    data-toggle="tab" tabindex="0">Tab 1</a>
-            </li>
-            <li class="nav-item">
-                <a id="tabTwo" class="nav-link" href="#tab2" role="tab" aria-controls="tab" aria-selected="false"
-                    data-toggle="tab" tabindex="-1">Tab 2</a>
-            </li>
-            <li class="nav-item" aria-hidden="true">
-                <a id="tabThree" class="nav-link" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"
-                    data-toggle="tab" tabindex="-1">Tab 3</a>
-            </li>
-        </ul>
-    
-        <div id="tabContent" class="tab-content" aria-live="polite">
-            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tabOne" aria-hidden="false"
-                tabindex="0">
-                <p>Tab 1</p>
-            </div>
-            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tabTwo" aria-hidden="true" tabindex="0">
-                <Alerts :route-id="routeInfo.route_id" :providerContact="routeInfo.provider_contact" />
-            </div>
-            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tabThree" aria-hidden="true" tabindex="0">
-                <MapIt :route-id="routeInfo.route_id" />
-            </div>
-        </div>
-    </div>
-    
-    <script src="js/tabs-ada.js"></script>
+		<div id="tabs" class="bs-tabs">
+			<ul role="tablist" id="tabsComponent" class="nav nav-tabs" aria-label="Resources">
+				<li class="nav-item">
+					<a role="tab" aria-controls="tab1" aria-selected="true" id="tabOne" class="nav-link active" href="#tab1"
+						data-toggle="tab">
+						Tab 1
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="tab" aria-controls="tab2" aria-selected="false" id="tabTwo" class="nav-link" href="#tab2"
+						data-toggle="tab" tabindex="-1">
+						Tab 2
+					</a>
+				</li>
+				<li aria-hidden="true" class="nav-item">
+					<a role="tab" aria-controls="tab3" aria-selected="false" id="tabThree" class="nav-link" href="#tab3"
+						data-toggle="tab" tabindex="-1" data-deletable="">
+						Tab 3
+					</a>
+				</li>
+			</ul>
+		
+			<div id="tabContent" class="tab-content" aria-live="polite">
+				<div role="tabpanel" aria-labelledby="tabOne" aria-hidden="false" class="tab-pane fade" id="tab1" tabindex="0">
+					<p>Tab 1</p>
+				</div>
+				<div role="tabpanel" aria-labelledby="tabTwo" aria-hidden="true" class="tab-pane fade" id="tab2"
+					aria-labelledby="tabTwo" aria-hidden="true" tabindex="0" hidden="">
+					<p>Tab 2</p>
+				</div>
+				<div role="tabpanel" aria-labelledby="tabThree" aria-hidden="true" class="tab-pane fade" id="tab3" tabindex="0"
+					hidden="">
+					<p>Tab 3</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/tabs-ada.js"></script>
     <!-- <script src="js/variables.js"></script> -->
     <!-- <script src="js/arrays.js"></script> -->
     <!-- <script src="js/operators.js"></script> -->
