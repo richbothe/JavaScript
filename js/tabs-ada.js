@@ -1,7 +1,5 @@
-/*
-*   This content is licensed according to the W3C Software License at
-*   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-*/
+// Source: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html
+
 (function () {
   var tablist = document.querySelectorAll('[role="tablist"]')[0];
   var tabs;
@@ -150,6 +148,9 @@
     // Deactivate all other tabs
     deactivateTabs();
 
+    // Set active class
+    tab.classList.add('active');
+
     // Remove tabindex attribute
     tab.removeAttribute('tabindex');
 
@@ -161,6 +162,7 @@
 
     // Remove hidden attribute from tab panel to make it visible
     document.getElementById(controls).removeAttribute('hidden');
+    
 
     // Set focus when required
     if (setFocus) {
@@ -171,6 +173,7 @@
   // Deactivate all tabs and tab panels
   function deactivateTabs () {
     for (t = 0; t < tabs.length; t++) {
+      tabs[t].classList.remove('active');
       tabs[t].setAttribute('tabindex', '-1');
       tabs[t].setAttribute('aria-selected', 'false');
       tabs[t].removeEventListener('focus', focusEventHandler);
