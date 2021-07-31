@@ -1,5 +1,5 @@
 // OPERATORS
-
+console.log('*** OPERATORS ***');
 // Additon
 var firstName = 'Rich';
 console.log(3 + 5); // Add numbers

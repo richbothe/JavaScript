@@ -1,6 +1,7 @@
 // VARIABLES and TYPES
 
 // Variable
+console.log('*** VARIABLES ***');
 var emptyVariable; // undefined
 console.log(emptyVariable);
 

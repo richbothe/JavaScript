@@ -1,5 +1,5 @@
 // ARRAYS
-
+console.log('*** ARRAYS ***');
 var emptyArray = [], // Empty array
     myArray = [1, 2, 3, 4],             // brackets notation
     sameArray = new Array(1, 2, 3, 4);  // array object notation

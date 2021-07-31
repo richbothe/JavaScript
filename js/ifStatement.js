@@ -1,5 +1,5 @@
 // THE 'if'' STATEMENT
-
+console.log('*** THE "if" STATEMENT ***');
 // Equality operator 
 // '==' evaluates whether two variables are equal.
 // '===' does strict comparison, meaning it will be true only if the two things being compared are the same type as well as the same content.
